@@ -1,0 +1,6 @@
+{
+  "name": "Bootvue",
+  "tagline": "",
+  "body": "# BootVue\r\n\r\n> 一个使用封装Bootstrap的Vue组件库\r\n\r\n## Build Setup\r\n\r\n``` bash\r\n# install dependencies\r\nnpm install\r\n\r\n# serve with hot reload at localhost:8080\r\nnpm run dev\r\n\r\n```\r\n# See\r\n[Demo](http://github.com/f-12/BootVue/dist/index.html)",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
