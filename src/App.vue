@@ -188,9 +188,28 @@
       <h3>Modal</h3>
       <button type="button" class="btn btn-primary" @click="launchModal">Launch Modal</button>
       <modal v-ref:modal>
+        <div class="" slot="modal-header">
+          <h3>This is a Modal</h3>
+        </div>
         <p>
           vue-loader will parse the file, extract each language block, pipe them through other loaders if necessary, and finally assemble them back into a CommonJS module whose module.exports is a Vue.js component options object.
         </p>
+        <a href="javascript;">This is a link</a>
+      </modal>
+      <h4>Modal Title With Customized Content</h3>
+      <button type="button" class="btn btn-primary" @click="launchModal2">launchModal2</button>
+      <modal v-ref:modal2>
+        <div class="" slot="modal-header">
+          <button type="button" class="btn btn-primary">Title</button>
+        </div>
+        <p>
+          vue-loader will parse the file, extract each language block, pipe them through other loaders if necessary, and finally assemble them back into a CommonJS module whose module.exports is a Vue.js component options object.
+        </p>
+        <a href="javascript;">This is a link</a>
+        <div class="" slot="modal-footer">
+          <img src="http://cn.vuejs.org/images/logo.png" alt="Vue Icon" style="width: 50px; heigth:50px;"/>
+          <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-off"></i></button>
+        </div>
       </modal>
     </section>
   </div>
@@ -243,12 +262,33 @@ export default {
       this.$refs.dropdown.toggle();
     },
     launchModal() {
-      this.$refs.modal.modal();
+      this.$refs.modal.show();
+    },
+    launchModal2() {
+      this.$refs.modal2.show();
     }
   },
   events: {
-    'pager:page-changed': function(page) {
+    'page-changed.pager': function(page) {
       alert('current page is ' + page.current);
+    },
+    'show.bv.modal': function() {
+      console.log('modal is showing');
+    },
+    'shown.bv.modal': function() {
+      console.log('modal is shown');
+    },
+    'hide.bv.modal': function() {
+      console.log('modal is hiding');
+    },
+    'hidden.bv.modal': function() {
+      console.log('modal is hidden');
+    },
+    'confirm.bv.modal': function() {
+      console.log('confirm');
+    },
+    'cancel.bv.modal': function() {
+      console.log('cancel');
     }
   },
   ready() {
